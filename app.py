@@ -1,4 +1,5 @@
 import numpy as np
+import nltk
 
 from keras.models import load_model
 from flask import Flask, request, render_template
@@ -6,6 +7,8 @@ from keras_preprocessing.sequence import pad_sequences
 from nltk.corpus import stopwords
 from keras_preprocessing.text import tokenizer_from_json
 import json
+
+nltk.download('stopwords')
 
 stopwords_list = set(stopwords.words('english'))
 maxlen = 100
